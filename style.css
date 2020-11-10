@@ -57,9 +57,14 @@ h3 {
     font-size: 18px;
 }
 
-input[type=checkbox] {
-    display: block;
+label {
+    color: black;
 }
+
+
+/* input[type=checkbox] {
+    display: block;
+} */
 
 /* .answer {
     font-family: 'Courier Prime', monospace;
