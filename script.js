@@ -329,10 +329,6 @@ let groupOfQuestions = [{
     }
 ]
 
-
-
-
-
 let cuisineResponse = {
     mexican: 0,
     greek: 0,
@@ -372,15 +368,19 @@ let movieResponses = {
     western: 0
 }
 
+$('#start-btn').click(function() {
+    $('#start-btn').addClass('hidden');
+    $('.text-container').addClass('hidden');
+    $('.post-it-container').removeClass('hidden');
+    $('.restart').removeClass('hidden');
+
+})
 
 displayQuestion();
 
 function displayQuestion() {
-    if (questionNum % 2 === 0 || questionNum === 0) {
-        $('.post-it-container').css('background-image', 'url("assets/pink-post-it.png")');
-    } else {
-        $('.post-it-container').css('background-image', 'url("assets/blue-post-it.png")');
-    }
+    if (questionNum % 2 === 0 || questionNum === 0) $('.post-it-container').css('background-image', 'url("assets/pink-post-it.png")');
+    else $('.post-it-container').css('background-image', 'url("assets/blue-post-it.png")');
 
     $('.form-container').attr('data-question-type', groupOfQuestions[questionNum].type);
     $('#question').text(groupOfQuestions[questionNum].question);
@@ -392,7 +392,6 @@ function displayQuestion() {
         $(answerTextEls[i]).text(groupOfQuestions[questionNum].answers[i].answer);
         $(answerInputEls[i]).attr('data-values', groupOfQuestions[questionNum].answers[i].values);
     }
-
     questionNum++;
 }
 
@@ -442,8 +441,6 @@ $('#submit-answer-btn').click(function () {
 
     let questionType = $('.form-container').attr('data-question-type');
     let answerValues = $('input:checked').attr('data-values').split(' ');
-    console.log(answerValues);
-    console.log(questionType);
 
     for (let i = 0; i < answerValues.length; i++) {
         if (questionType === 'movie') {
@@ -465,9 +462,6 @@ $('#submit-answer-btn').click(function () {
         displayQuestion();
     } else {
         console.log('quiz over');
-        console.log(movieResponses);
-        console.log(cuisineResponse);
-        console.log(proteinType);
         selectTwoLargestGenreScores();
 
         let cuisineResult = selectLargestValue(cuisineResponse);
@@ -476,10 +470,11 @@ $('#submit-answer-btn').click(function () {
         console.log(cuisineResult);
         console.log(proteinResult);
         let arrayLength = foodSearches[cuisineResult][proteinResult].length;
-        console.log('food search: ' + foodSearches[cuisineResult][proteinResult][getRandomInt(arrayLength)]);
+        let dishSelected = foodSearches[cuisineResult][proteinResult][getRandomInt(arrayLength)];
+        console.log(dishSelected);
 
-        /* console.log(selectLargestValue(cuisineResponse));
-        console.log(selectLargestValue(proteinType)); */
+        getRandomMovieByGenres();
+        getRecipe(dishSelected);
     }
 })
 
@@ -524,6 +519,84 @@ function convertGenreToGenreId(genre) {
         case 'western':
             37;
     }
+}
+
+function getRandomMovieByGenres () {
+    let genres = selectedGenresNumbers[0] + '%2C' + selectedGenresNumbers[1];
+    let baseUrl = 'https://api.themoviedb.org/3/discover/movie?api_key='
+    let apiKey = '45dc1254eef7b6f17b3187493b8417fb';
+    let sortBy = 'popularity.desc';
+    let defaultValues = '&language=en-US&include_adult=false&include_video=false'
+    let page = getRandomInt(25) + 1;
+    console.log('page: ' + page);
+
+    let searchURL = `${baseUrl}${apiKey}${defaultValues}&sort_by=${sortBy}&page=${page}&with_genres=${genres}`
+
+    $.ajax({
+        url: searchURL,
+        method: "GET"
+    }).then(function (response) {
+        let data = response.results;
+        console.log(data);
+
+        let random = getRandomInt(20);
+        let posterPath = response.results[random].poster_path;
+        let moviePosterEl = '';
+
+        if (posterPath) {
+            let posterURL = `https://image.tmdb.org/t/p/w200${posterPath}`;
+            moviePosterEl = $('<img>').attr('src', posterURL);
+        }
+        
+        let movieTitleEl = $('<div>').text(data[random].title);
+        let releaseDateEl = $('<div>').text(data[random].release_date);
+        let overviewEl = $('<div>').text(data[random].overview);
+
+        $('.output').append(movieTitleEl)
+        if (posterPath) $('.output').append(moviePosterEl);
+        $('.output').append(releaseDateEl, overviewEl)
+    })
+}
+
+function getRecipe(inputValue) {
+    let baseURL = 'https://api.edamam.com/search';
+    let search = `?q=${inputValue}`;
+    let apiKey = '61483b049f42cf2b573ca9154a944bcc';
+    let apiId = 'cc582b21';
+    let from = 1;
+    let to = from + 10;
+
+    console.log(from);
+    console.log(to);
+
+    let searchURL = `${baseURL}${search}&app_id=${apiId}&app_key=${apiKey}&from=${from}&to=${to}`;
+    $.ajax({
+        url: searchURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+
+        let random = getRandomInt(10);
+        console.log('random: ' + random);
+        /* console.log(response.hits[random]);
+        console.log(response.hits[random].recipe.label);
+        console.log(response.hits[random].recipe.image);
+        console.log(response.hits[random].recipe.url);
+        console.log(response.hits[random].recipe.ingredientLines); */
+        let recipeIngredients = response.hits[random].recipe.ingredientLines;
+
+        let recipeTitleEl = $('<h2>').text(response.hits[random].recipe.label);
+        let recipePictureEl = $('<img>').attr('src', response.hits[random].recipe.image);
+        let recipeLinkEl = $('<a>').text(response.hits[random].recipe.url).attr('href', response.hits[random].recipe.url);
+        let recipeListEl = $('<div>').addClass('recipe-ingredients-list');
+
+        for (let i = 0; i < recipeIngredients.length; i++) {
+            let item = $('<div>').text(recipeIngredients[i]);
+            $(recipeListEl).append(item);
+        }
+        $('.output').append(recipeTitleEl, recipePictureEl, recipeLinkEl, recipeListEl); 
+    })
+
 }
 
 function getRandomInt(max) {
