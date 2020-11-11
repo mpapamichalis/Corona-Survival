@@ -4,29 +4,7 @@ let selectedGenresNumbers = '';
 let largestCruisineValue = '';
 let largestProteinValue = '';
 
-
 let groupOfQuestions = [{
-        type: 'movie',
-        question: 'Here is a question',
-        answers: [{
-                answer: 'This is answer 1',
-                values: 'action action'
-            },
-            {
-                answer: 'This is answer 2',
-                values: 'adventure adventure'
-            },
-            {
-                answer: 'This is answer 3',
-                values: 'horror horror'
-            },
-            {
-                answer: 'This is answer 4',
-                values: 'horror horror'
-            }
-        ]
-    },
-    {
         type: 'movie',
         question: 'If you were stranded on an island who would you choose to be stranded with?',
         answers: [{
@@ -47,8 +25,121 @@ let groupOfQuestions = [{
             }
         ]
     },
+    {
+        type: 'movie',
+        questions: 'What kind of hero would you root for?',
+        answers: [{
+                answer: 'someone taken from history',
+                values: 'documentary documentary'
+            },
+            {
+                answer: 'someone who shows no fear',
+                values: 'action scifi',
+            },
+            {
+                answer: 'someone who faces challenges but rises above',
+                values: 'comedy comedy'
+            },
+            {
+                answer: 'I dont care for heros',
+                values: 'horror thriller'
+            }
+        ]
+    },
+    {
+        type: 'movie',
+        questions: 'What is your preferred movie night like?',
+        answers: [{
+                answer: 'something intellectual',
+                values: 'documentary documentary'
+            },
+            {
+                answer: 'hiding under the covers with all the lights on',
+                values: 'horror thriller',
+            },
+            {
+                answer: 'having a good laugh with freinds',
+                values: 'comedy comedy'
+            },
+            {
+                answer: 'snuggle on the couch with someone special',
+                values: 'romance romance'
+            }
+        ]
+    },
+    {
+        type: 'movie',
+        questions: 'Whats your favorite part about a movie?',
+        answers: [{
+                answer: 'the emotional close ups',
+                values: 'romance documentary'
+            },
+            {
+                answer: 'the special FX',
+                values: 'action horror'
+            },
+            {
+                answer: 'unique camera angles',
+                values: 'drama action documentary horror scifi'
+            },
+            {
+                answer: 'the panormaic views',
+                values: 'action documentary'
+            }
+        ]
+    },
+    {
+        type: 'movie',
+        questions: 'What movie character do you wish you could be?',
+        answers: [{
+                answer: 'James Bond',
+                values: 'action action'
+            },
+            {
+                answer: 'Elle Woods',
+                values: 'romance comedy'
+            },
+            {
+                answer: 'Michael Meyers',
+                values: 'horror thriller'
+            },
+            {
+                answer: 'Luke Skywalker',
+                values: 'scifi, action'
+            },
+            {
+                answer: 'Olaf',
+                values: 'family family'
+            }
+        ]
+    },
+    {
+        type: 'movie',
+        questions: 'What kind of movie would you most likely find yourself in?',
+        answers: [{
+                answer: 'Mission Impossible',
+                values: 'action action'
+            },
+            {
+                answer: 'March of the Penguins',
+                values: 'documentary documentary'
+            },
+            {
+                answer: 'The Post',
+                values: 'drama drama'
+            },
+            {
+                answer: "Ferris Bueller's Day Off",
+                values: 'comedy comedy'
+            },
+            {
+                answer: 'Contagion',
+                values: 'thriller thriller'
+            }
+        ]
+    }
 ]
-
+ 
 let cruisineResponse = {
     mexican: 0,
     greek: 0,
@@ -81,7 +172,7 @@ let movieResponses = {
     music: 0,
     mystery: 0,
     romance: 0,
-    scienceFiction: 0,
+    scifi: 0,
     tvMovie: 0,
     thriller: 0,
     war: 0,
@@ -114,7 +205,7 @@ function displayQuestion() {
     questionNum++;
 }
 
-function selectLargestValue (array) {
+function selectLargestValue(array) {
     let max = 0;
     let result = '';
     for (let value in array) {
@@ -126,7 +217,7 @@ function selectLargestValue (array) {
     return result;
 }
 
-function selectTwoLargestGenreScores () {
+function selectTwoLargestGenreScores() {
     let max = 0;
     // finds first largest key value pair
     for (let genre in movieResponses) {
@@ -169,6 +260,10 @@ $('#submit-answer-btn').click(function () {
         }
     }
 
+    $('.form-container input:checked').each(function(){
+        $(this).prop('checked', false); 
+    });
+
     if (questionNum <= groupOfQuestions.length - 1) {
         displayQuestion();
     } else {
@@ -178,28 +273,47 @@ $('#submit-answer-btn').click(function () {
     }
 })
 
-function convertGenreToGenreId (genre) {
-    switch(genre) {
-        case 'action': return 28;
-        case 'adventure': return 12;
-        case 'animation': return 16;
-        case 'comedy': return 35;
-        case 'crime': return 80;
-        case 'documentary': return 99;
-        case 'drama': return 18;
-        case 'family': return 10751;
-        case 'fantasy': return 14;
-        case 'history': return 36;
-        case 'horror': return 27;
-        case 'music': return 10402;
-        case 'mystery': return 9648;
-        case 'romance': return 10749;
-        case 'scienceFiction': return 878;
-        case 'tvMovie': return 10770;
-        case 'thriller': return 53;
-        case 'war': 10752;
-        case 'western': 37;
-      }
+function convertGenreToGenreId(genre) {
+    switch (genre) {
+        case 'action':
+            return 28;
+        case 'adventure':
+            return 12;
+        case 'animation':
+            return 16;
+        case 'comedy':
+            return 35;
+        case 'crime':
+            return 80;
+        case 'documentary':
+            return 99;
+        case 'drama':
+            return 18;
+        case 'family':
+            return 10751;
+        case 'fantasy':
+            return 14;
+        case 'history':
+            return 36;
+        case 'horror':
+            return 27;
+        case 'music':
+            return 10402;
+        case 'mystery':
+            return 9648;
+        case 'romance':
+            return 10749;
+        case 'scifi':
+            return 878;
+        case 'tvMovie':
+            return 10770;
+        case 'thriller':
+            return 53;
+        case 'war':
+            10752;
+        case 'western':
+            37;
+    }
 }
 
 function getRandomInt(max) {
