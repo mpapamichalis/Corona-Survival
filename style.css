@@ -59,16 +59,20 @@ h3 {
 
 label {
     color: black;
+    font-family: 'Courier Prime', monospace;
 }
 
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+    border: 2px solid #ed1a38;
+}
 
-/* input[type=checkbox] {
-    display: block;
-} */
+[type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after {
+    background-color: #ed1a38;
+}
 
-/* .answer {
-    font-family: 'Courier Prime', monospace;
-} */
+[type="radio"]:not(:checked)+span:before, [type="radio"]:not(:checked)+span:after {
+    border: 2px solid black;
+}
 
 @media (min-width: 1150px) {
     .container {
