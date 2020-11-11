@@ -1,13 +1,11 @@
 let questionNum = 0;
 let selectedGenres = '';
 let selectedGenresNumbers = '';
-let largestCruisineValue = '';
-let largestProteinValue = '';
 
 let foodSearches = {
     italian: {
         chicken: ['chicken parmigiana', 'chicken cacciatore', 'chicken milanese', 'chicken piccata', 'caprese chicken', 'tuscan chicken'],
-        beef: ['spagetti and meatballs', 'beef braciole', 'sciusceddu', "manzo all'olio"],
+        beef: ['spagetti and meatballs', 'beef braciole', 'italian meatball soup', "manzo all'olio"],
         pork: ['tonno del chianti', 'pampanella', 'pasta bolognese', 'arista al Latte', 'cassoeula', 'carbonara'],
         seafood: ['italian seafood pasta', 'frutti di mare', 'cioppino', 'pasta with clams', 'linguine and clams', 'tuna taretare'],
         vegetarian: ['margarita pizza', 'stuffed tomatoes', 'cheese ravioli', 'broccoli gnocchi', 'pasta primavera', 'calamari ripieni', 'mushroom baked ziti'],
@@ -18,7 +16,8 @@ let foodSearches = {
         pork: ['ginger pork', 'sweet and sour pork', 'chinese bbq pork', 'pork stir fry', 'pork red rice'],
         seafood: ['seafood fried rice', 'szechwan shrimp', 'shrimp lo mein', 'kung pao shrimp', 'ginger soy fish'],
         vegetarain: ['sushi', 'vegetarian ramen', 'veggie stir fry', 'tofu and snap pee stir fry', 'veggie pad see ew',
-            'spring rolls', 'spicy szechwan noodles', 'vegetarian hot and sour soup', 'carrot dumplings', 'thai broccoli soup']
+            'spring rolls', 'spicy szechwan noodles', 'vegetarian hot and sour soup', 'carrot dumplings', 'thai broccoli soup'
+        ]
     },
     american: {
         chicken: ['fried Chicken', 'buffalo wings', 'chicken pot pie', 'chicken spaghetti', 'grilled pineapple chicken', 'baked chicken with veggies'],
@@ -46,7 +45,7 @@ let foodSearches = {
         beef: ['beef masala curry', 'beef curry with potatoes', 'nihari ghost', 'kheema', 'beef curry with rice', 'nadan beef curry'],
         pork: ['spicy pork vindaloo', 'pork curry', 'indian pork chop', 'pork indad'],
         seafood: ['goan fish curry', 'kerala fish', 'tandoori fish tikka', 'seafood vindaloo', 'prawn patia'],
-        vegaterian: ['indian fried rice', 'palak paneer', 'indian coconut lentil curry', 'butternut tikka masala', 'malia kofta', 'chole', 'palak paneer']
+        vegaterian: ['indian fried rice', 'indian coconut lentil curry', 'butternut tikka masala', 'malia kofta', 'chole', 'palak paneer']
     }
 }
 
@@ -59,11 +58,11 @@ let groupOfQuestions = [{
             },
             {
                 answer: 'Tom Hanks',
-                values: 'drama romance'
+                values: 'drama romance adventure family'
             },
             {
                 answer: 'Kate Hudson',
-                values: 'romance comedy'
+                values: 'romance romance comedy'
             },
             {
                 answer: 'Vin Disel',
@@ -80,15 +79,15 @@ let groupOfQuestions = [{
             },
             {
                 answer: 'someone who shows no fear',
-                values: 'action scifi',
+                values: 'action scifi adventure',
             },
             {
                 answer: 'someone who faces challenges but rises above',
-                values: 'comedy comedy'
+                values: 'comedy comedy adventure'
             },
             {
                 answer: 'I dont care for heros',
-                values: 'horror thriller'
+                values: 'horror horror thriller thriller'
             }
         ]
     },
@@ -97,19 +96,19 @@ let groupOfQuestions = [{
         question: 'What is your preferred movie night like?',
         answers: [{
                 answer: 'something intellectual',
-                values: 'documentary documentary'
+                values: 'documentary documentary documentary'
             },
             {
                 answer: 'hiding under the covers with all the lights on',
-                values: 'horror thriller',
+                values: 'horror horror horror thriller thriller',
             },
             {
                 answer: 'having a good laugh with freinds',
-                values: 'comedy comedy'
+                values: 'comedy comedy comedy'
             },
             {
                 answer: 'snuggle on the couch with someone special',
-                values: 'romance romance'
+                values: 'romance romance romance'
             }
         ]
     },
@@ -118,11 +117,11 @@ let groupOfQuestions = [{
         question: 'Whats your favorite part about a movie?',
         answers: [{
                 answer: 'the emotional close ups',
-                values: 'romance documentary'
+                values: 'romance romance drama drama documentary'
             },
             {
                 answer: 'the special FX',
-                values: 'action horror'
+                values: 'action horror adventure scifi'
             },
             {
                 answer: 'unique camera angles',
@@ -130,7 +129,7 @@ let groupOfQuestions = [{
             },
             {
                 answer: 'the panormaic views',
-                values: 'action documentary'
+                values: 'documentary adventure scifi'
             }
         ]
     },
@@ -139,19 +138,19 @@ let groupOfQuestions = [{
         question: 'What movie character do you wish you could be?',
         answers: [{
                 answer: 'James Bond',
-                values: 'action action'
+                values: 'action action adventure'
             },
             {
                 answer: 'Michael Meyers',
-                values: 'horror thriller'
+                values: 'horror horror horror thriller thriller'
             },
             {
                 answer: 'Luke Skywalker',
-                values: 'scifi action'
+                values: 'scifi scifi scifi action'
             },
             {
                 answer: 'Olaf',
-                values: 'family family'
+                values: 'family family family'
             }
         ]
     },
@@ -160,19 +159,19 @@ let groupOfQuestions = [{
         question: 'What kind of movie would you most likely find yourself in?',
         answers: [{
                 answer: 'March of the Penguins',
-                values: 'documentary documentary'
+                values: 'documentary documentary documentary adventure'
             },
             {
                 answer: 'The Post',
-                values: 'drama drama'
+                values: 'drama drama thriller'
             },
             {
                 answer: "Ferris Bueller's Day Off",
-                values: 'comedy comedy'
+                values: 'comedy comedy family'
             },
             {
                 answer: 'Contagion',
-                values: 'thriller thriller'
+                values: 'thriller thriller thriller horror horror'
             }
         ]
     },
@@ -181,24 +180,20 @@ let groupOfQuestions = [{
         question: 'Who would you choose as your best friend?',
         answers: [{
                 answer: 'Groot',
-                values: 'action comedy'
+                values: 'action comedy scifi scifi'
             },
             {
                 answer: 'Indiana Jones',
-                values: 'action action'
+                values: 'action adventure adventure'
             },
             {
                 answer: 'The Minions',
-                values: 'comedy family'
+                values: 'comedy family family family'
             },
             {
                 answer: 'Inigo Montoya',
-                values: 'adventure action'
+                values: 'adventure action comedy adventure'
             },
-            {
-                answer: 'Katniss Everdeen',
-                values: 'actiona drama romance'
-            }
         ]
     },
     {
@@ -206,19 +201,19 @@ let groupOfQuestions = [{
         question: 'What do you like to get out of the movies you watch?',
         answers: [{
                 answer: 'entertainment',
-                values: 'action comedy scifi'
+                values: 'action comedy scifi family'
             },
             {
                 answer: 'a lesson',
-                values: 'documentary documentary'
+                values: 'documentary documentary documentary'
             },
             {
                 answer: 'inspiration',
-                values: 'drama scifi'
+                values: 'drama scifi adventure'
             },
             {
                 answer: 'love',
-                values: 'romance romance'
+                values: 'romance romance romance drama'
             },
         ]
     },
@@ -227,7 +222,7 @@ let groupOfQuestions = [{
         question: 'Who means the most to you?',
         answers: [{
                 answer: 'you family pet',
-                values: 'documentary drama'
+                values: 'documentary drama family'
             },
             {
                 answer: 'your friends',
@@ -235,14 +230,56 @@ let groupOfQuestions = [{
             },
             {
                 answer: 'your partner',
-                values: 'romance horror'
+                values: 'romance romance horror'
             },
             {
                 answer: 'omg just pick a movie already!',
-                values: 'action action'
+                values: 'action action thriller'
             },
         ]
     },
+    {
+        type: 'movie',
+        question: 'From this list, which is your favorite movie',
+        answers: [{
+                answer: 'The Dark Knight',
+                values: 'action thriller thriller'
+            },
+            {
+                answer: 'The Hobbit',
+                values: 'adventure adventure adventure'
+            },
+            {
+                answer: 'Frozen',
+                values: 'family family family'
+            },
+            {
+                answer: "You've Got Mail",
+                values: 'romance romance drama drama'
+            }
+        ]
+    }, 
+    {
+        type: 'movie',
+        question: 'Which is your favorite space movie',
+        answers: [{
+                answer: 'The Martian',
+                values: 'drama drama adventure scifi'
+            },
+            {
+                answer: 'WALL-E',
+                values: 'adventure scifi family family'
+            },
+            {
+                answer: 'Prometheus',
+                values: 'horror horror horror scifi'
+            },
+            {
+                answer: "Armageddon",
+                values: 'romance drama thriller thriller scifi'
+            }
+        ]
+    }, 
     {
         type: 'cuisine',
         question: 'Your biggest celebrity crush comes and knocks on your door. They have a private jet ready for you two to go have a nice meal anywhere in the world, your choice. Where do you choose?',
@@ -261,27 +298,6 @@ let groupOfQuestions = [{
             {
                 answer: 'New York',
                 values: 'american'
-            }
-        ]
-    },
-    {
-        type: 'protein',
-        question: 'Old McDonald had a farm.',
-        answers: [{
-                answer: 'Oink',
-                values: 'pork'
-            },
-            {
-                answer: 'Moo',
-                values: 'beef'
-            },
-            {
-                answer: 'Cock-A-Doodle-Do',
-                values: 'chicken'
-            },
-            {
-                answer: 'Silence',
-                values: 'vegetarian'
             }
         ]
     },
@@ -326,6 +342,111 @@ let groupOfQuestions = [{
                 values: 'italian'
             }
         ]
+    },
+    {
+        type: 'cuisine',
+        question: 'You are attempting to make an special dish to impress your significant other.  What would you try to make',
+        answers: [{
+                answer: 'Sushi',
+                values: 'asian asian'
+            },
+            {
+                answer: 'Falafel',
+                values: 'greek greek'
+            },
+            {
+                answer: 'Indian Coconut Lentil Curry',
+                values: 'indian'
+            },
+            {
+                answer: 'Chicken and Waffles',
+                values: 'american'
+            }
+        ]
+    },
+    {
+        type: 'protein',
+        question: 'Old McDonald had a farm.',
+        answers: [{
+                answer: 'Oink',
+                values: 'pork'
+            },
+            {
+                answer: 'Moo',
+                values: 'beef'
+            },
+            {
+                answer: 'Cock-A-Doodle-Do',
+                values: 'chicken'
+            },
+            {
+                answer: 'Silence',
+                values: 'vegetarian'
+            }
+        ]
+    },
+    {
+        type: 'protein',
+        question: 'Favorite item to order at at a BBQ place.',
+        answers: [{
+                answer: 'Grilled chicken',
+                values: 'chicken'
+            },
+            {
+                answer: 'Pork Ribes',
+                values: 'pork'
+            },
+            {
+                answer: 'Brisket',
+                values: 'beef'
+            },
+            {
+                answer: "I don't eat meat",
+                values: 'vegetarian'
+            }
+        ]
+    },
+    {
+        type: 'protein',
+        question: 'How would you rate seafood in general?',
+        answers: [{
+                answer: '10 out of 10!',
+                values: 'seafood seafood'
+            },
+            {
+                answer: 'I like it',
+                values: 'seafood'
+            },
+            {
+                answer: 'I prefer land mammals',
+                values: 'beef chicken pork'
+            },
+            {
+                answer: "I don't any kind of meat",
+                values: 'vegetarian'
+            }
+        ]
+    },
+    {
+        type: 'protein',
+        question: 'You are at the Cheese Cake Factory, what are you ordering?',
+        answers: [{
+            answer: 'Crispy Pineapple Chicken and Shrimp',
+            values: 'seafood chicken'
+        },
+        {
+            answer: 'Chargrilled New York Steak',
+            values: 'beef'
+        },
+        {
+            answer: 'California Guacamole Salad',
+            values: 'vegetarian'
+        },
+        {
+            answer: "Cuban Sandwhich",
+            values: 'pork'
+        }
+    ]
     }
 ]
 
@@ -368,7 +489,7 @@ let movieResponses = {
     western: 0
 }
 
-$('#start-btn').click(function() {
+$('#start-btn').click(function () {
     $('#start-btn').addClass('hidden');
     $('.text-container').addClass('hidden');
     $('.post-it-container').removeClass('hidden');
@@ -447,10 +568,8 @@ $('#submit-answer-btn').click(function () {
             movieResponses[answerValues[i]] += 1;
         } else if (questionType === 'cuisine') {
             cuisineResponse[answerValues[i]] += 1;
-            console.log(cuisineResponse);
         } else if (questionType === 'protein') {
             proteinType[answerValues[i]] += 1;
-            console.log(proteinType);
         }
     }
 
@@ -521,7 +640,7 @@ function convertGenreToGenreId(genre) {
     }
 }
 
-function getRandomMovieByGenres () {
+function getRandomMovieByGenres() {
     let genres = selectedGenresNumbers[0] + '%2C' + selectedGenresNumbers[1];
     let baseUrl = 'https://api.themoviedb.org/3/discover/movie?api_key='
     let apiKey = '45dc1254eef7b6f17b3187493b8417fb';
@@ -547,7 +666,7 @@ function getRandomMovieByGenres () {
             let posterURL = `https://image.tmdb.org/t/p/w200${posterPath}`;
             moviePosterEl = $('<img>').attr('src', posterURL);
         }
-        
+
         let movieTitleEl = $('<div>').text(data[random].title);
         let releaseDateEl = $('<div>').text(data[random].release_date);
         let overviewEl = $('<div>').text(data[random].overview);
@@ -566,14 +685,18 @@ function getRecipe(inputValue) {
     let from = 1;
     let to = from + 10;
 
+    console.log(cuisineResponse);
+    console.log(proteinType);
+
     console.log(from);
     console.log(to);
 
-    let searchURL = `${baseURL}${search}&app_id=${apiId}&app_key=${apiKey}&from=${from}&to=${to}`;
+    let searchURL = `${baseURL}${search}&app_id=${apiId}&app_key=${apiKey}`;
     $.ajax({
         url: searchURL,
         method: "GET"
     }).then(function (response) {
+        console.log('food response');
         console.log(response);
 
         let random = getRandomInt(10);
@@ -594,7 +717,7 @@ function getRecipe(inputValue) {
             let item = $('<div>').text(recipeIngredients[i]);
             $(recipeListEl).append(item);
         }
-        $('.output').append(recipeTitleEl, recipePictureEl, recipeLinkEl, recipeListEl); 
+        $('.output').append(recipeTitleEl, recipePictureEl, recipeLinkEl, recipeListEl);
     })
 
 }

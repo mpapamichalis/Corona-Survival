@@ -25,6 +25,10 @@ h3 {
     color: #ed1a38;
 }
 
+.red-btn:hover {
+    background-color: black;
+}
+
 .container {
     text-align: center;
     background-image: url('assets/paper.png');
@@ -124,16 +128,11 @@ label {
 #submit-answer-btn:active {
     background-color: white;
     color: #ed1a38;
-}
+} 
 
 .output {
     background-color: white;
 }
-
-.hidden {
-    display: none;
-}
-
 
 @media (min-width: 1150px) {
     .container {
@@ -159,4 +158,8 @@ label {
         width: 280px;
         height: 90px;
     }
+}
+
+.hidden {
+    display: none;
 }
