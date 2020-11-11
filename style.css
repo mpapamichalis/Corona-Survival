@@ -51,6 +51,11 @@ h3 {
     letter-spacing: 1px;
 }
 
+.restart:active {
+    background-color:#ed1a38;
+    color: white;
+}
+
 #question {
     text-align: center;
     font-family: 'Bebas Neue', cursive;
@@ -73,6 +78,20 @@ label {
 [type="radio"]:not(:checked)+span:before, [type="radio"]:not(:checked)+span:after {
     border: 2px solid black;
 }
+
+#submit-answer-btn {
+    background-color: #ed1a38;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+    font-size: 18px;
+    padding: 2px 10px 5px 10px;
+}
+
+#submit-answer-btn:active {
+    background-color: white;
+    color: #ed1a38;
+}
+
 
 @media (min-width: 1150px) {
     .container {
