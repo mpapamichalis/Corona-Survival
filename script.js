@@ -65,7 +65,7 @@ let groupOfQuestions = [{
                 values: 'romance romance comedy'
             },
             {
-                answer: 'Vin Disel',
+                answer: 'Vin Diesel',
                 values: 'action action'
             }
         ]
@@ -141,7 +141,7 @@ let groupOfQuestions = [{
                 values: 'action action adventure'
             },
             {
-                answer: 'Michael Meyers',
+                answer: 'Michael Myers',
                 values: 'horror horror horror thriller thriller'
             },
             {
@@ -221,7 +221,7 @@ let groupOfQuestions = [{
         type: 'movie',
         question: 'Who means the most to you?',
         answers: [{
-                answer: 'you family pet',
+                answer: 'your family pet',
                 values: 'documentary drama family'
             },
             {
