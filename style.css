@@ -12,6 +12,11 @@ h3 {
     margin-top: 5px;
 }
 
+h4 {
+    font-family: 'Courier Prime', cursive;
+    font-size: 20px; 
+}
+
 .red-btn {
     background-color: #ed1a38;
     font-family: 'Bebas Neue', cursive;
@@ -144,7 +149,69 @@ label {
     clear: both;
 }
 
+.relative-div-anchor {
+    position: relative;
+}
+
+.row {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+}
+
 .movie-column {
+    background-image: url('assets/marquee.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 1000px; 
+    background-position: left top;
+}
+
+.movie-inner-container {
+    color: white;
+    margin-top: 10%;
+    height: 90%;
+    width: 89%;
+    margin-left: 10%;
+    text-align: center;
+    padding: 10px 10%;
+}
+
+.movie-inner-container img {
+    height: auto;
+    width: 60%;
+}
+
+.movie-inner-container p {
+    font-family: 'Courier Prime', cursive;
+}
+
+.recipe-column {
+    background-image: url('assets/recipes-half.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 1000px;
+}
+
+.recipe-inner-container {
+    margin-top: 10px;
+    height: 90%;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.recipe-inner-container img {
+    height: auto;
+    width: 60%;
+}
+
+.recipe-inner-container a {
+    color: black;
+    font-family: 'Courier Prime', cursive;
+}
+
+/* .movie-column {
     float: left;
     width: 50%;
     padding: 10px;
@@ -180,8 +247,7 @@ label {
     min-height: 350px;
     max-width: 350px;
     padding: 10px;
-
-}
+} */
 
 
 @media (min-width: 1150px) {

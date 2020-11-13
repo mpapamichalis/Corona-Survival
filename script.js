@@ -1,3 +1,4 @@
+/* ----- GLOBAL VARIABLES ----- */
 let questionNum = 0;
 let selectedGenres = '';
 let selectedGenresNumbers = '';
@@ -529,6 +530,7 @@ $('#submit-answer-btn').click(function () {
     } else {
         let answerValues = $('input:checked').attr('data-values').split(' ');
         console.log(answerValues);
+
         for (let i = 0; i < answerValues.length; i++) {
             if (questionType === 'movie') {
                 movieResponses[answerValues[i]] += 1;
@@ -547,6 +549,8 @@ $('#submit-answer-btn').click(function () {
             displayQuestion();
         } else {
             console.log('quiz over');
+            $('.post-it-container').addClass('hidden');
+            makeResultScreen();
             selectedGenres = selectLargestValue(movieResponses);
             selectedGenresNumbers = convertGenreToGenreId(selectedGenres);
             console.log('Selected Genre: ' + selectedGenres);
@@ -591,6 +595,25 @@ function updateQuestionCount() {
     $('.question-count').text(`${questionNum + 1} of ${groupOfQuestions.length}`);
 }
 
+function makeResultScreen () {
+    let anchorDiv = $('<div>').addClass('relative-div-anchor');
+    let row = $('<div>').addClass('row');
+    let firstCol = $('<div>').addClass('col l1 m0 s12');
+    let movieCol = $('<div>').addClass('col l4 m5 s12 movie-column');
+    let movieInner = $('<div>').addClass('movie-inner-container');
+    let middleCol = $('<div>').addClass('col l2 m2 s12 empty-col');
+    let recipeCol = $('<div>').addClass('col l4 m5 s12 recipe-column');
+    let recipeInner = $('<div>').addClass('recipe-inner-container');
+    let lastCol = $('<div>').addClass('col l1 m0 s12');
+
+    anchorDiv.append(row);
+    movieCol.append(movieInner);
+    recipeCol.append(recipeInner);
+    row.append(firstCol, movieCol, middleCol, recipeCol, lastCol);
+    
+    $('body').prepend(anchorDiv);
+}
+
 /* ----- AJAX REQUESTS ----- */
 function getRandomMovieByGenres() {
     let genre = selectedGenresNumbers;
@@ -621,15 +644,42 @@ function getRandomMovieByGenres() {
             moviePosterEl = $('<img>').attr('src', posterURL);
         }
 
-        let movieTitleEl = $('<div>').text(data[random].title);
-        let releaseDateEl = $('<div>').text(data[random].release_date);
-        let overviewEl = $('<div>').text(data[random].overview);
+        let movieTitleEl = $('<h4>').text(data[random].title);
+        let releaseDateEl = $('<p>').text('release date: ' + formateDate(data[random].release_date));
+        let overviewEl = $('<p>').text(data[random].overview);
 
-        $('.output').append(movieTitleEl)
-        if (posterPath) $('.output').append(moviePosterEl);
-        $('.output').append(releaseDateEl, overviewEl)
+        $('.movie-inner-container').append(movieTitleEl)
+        if (posterPath) $('.movie-inner-container').append(moviePosterEl);
+        $('.movie-inner-container').append(releaseDateEl, overviewEl)
     })
 }
+
+/* 
+<div class="relative-div-anchor">
+        <div class="row">
+            <div class="col l1 m0 s12"></div>
+            <div class="col l4 m5 s12 movie-column">
+                <div class="movie-inner-container">
+                    <h4>Movie Title</h4>
+                    <img src="./assets/photo-frame.png" alt="">
+                    <p>Released: 12/25/2020 </p>
+                    <p>Overview: </p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime saepe suscipit nihil ratione fugit quia sed culpa eos cupiditate neque, vitae, laboriosam, maiores dicta itaque iure est alias libero repudiandae.</p>
+                </div>
+            </div>
+            <div class="col l2 m2 s12 empty-col"></div>
+            <div class="col l4 m5 s12 recipe-column">
+                <div class="recipe-inner-container">
+                    <h4>Recipe Title</h4>
+                    <img src="./assets/photo-frame.png" alt="">
+                    <p>This will be a link</p>
+                </div>
+            </div>
+            <div class="col l1 m0 s12"></div>
+        </div>
+    </div>
+
+*/
 
 function getRecipe(inputValue) {
     let baseURL = 'https://api.edamam.com/search';
@@ -650,17 +700,19 @@ function getRecipe(inputValue) {
 
         let random = getRandomInt(10);
         console.log('random: ' + random);
-        let recipeIngredients = response.hits[random].recipe.ingredientLines;
-        let recipeTitleEl = $('<h2>').text(response.hits[random].recipe.label);
+        //let recipeIngredients = response.hits[random].recipe.ingredientLines;
+        let recipeTitleEl = $('<h4>').text(response.hits[random].recipe.label);
         let recipePictureEl = $('<img>').attr('src', response.hits[random].recipe.image);
+        let recipeLinkTitle =$('<h4>').text('Recipe Link:');
         let recipeLinkEl = $('<a>').text(response.hits[random].recipe.url).attr('href', response.hits[random].recipe.url);
-        let recipeListEl = $('<div>').addClass('recipe-ingredients-list');
+        $(recipeTitleEl).attr('target', '_blank');
+        //let recipeListEl = $('<div>').addClass('recipe-ingredients-list');
 
-        for (let i = 0; i < recipeIngredients.length; i++) {
+        /*for (let i = 0; i < recipeIngredients.length; i++) {
             let item = $('<div>').text(recipeIngredients[i]);
             $(recipeListEl).append(item);
-        }
-        $('.output').append(recipeTitleEl, recipePictureEl, recipeLinkEl, recipeListEl);
+        } */
+        $('.recipe-inner-container').append(recipeTitleEl, recipePictureEl, recipeLinkTitle, recipeLinkEl,);
     })
 
 }
@@ -719,6 +771,13 @@ function convertGenreToGenreId(genre) {
         case 'western':
             37;
     }
+}
+
+function formateDate (dateString) {
+    let year = dateString.slice(0, 4);
+    let month = dateString.slice(5, 7);
+    let day = dateString.slice(8, 10);
+    return month + '/' + day + '/' + year;
 }
 
 function getRandomInt(max) {
