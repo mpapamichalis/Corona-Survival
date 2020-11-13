@@ -138,6 +138,52 @@ label {
     background-color: white;
 }
 
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.movie-column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#marquee-container {
+    background-image: url('assets/marquee.png');
+    float: left;
+    min-height: 350px;
+    max-width: 450px;
+    padding: 10px;
+}
+
+.recipe-column {
+    float: right;
+    width: 50%;
+    padding: 10px;
+}
+
+#recipe-container {
+    background-image: url('assets/recipes-half.png');
+    float: right;
+    min-height: 450px;
+    max-width: 550px;
+    padding: 10px;
+}
+
+#recipe-image-container {
+    background-image: url('assets/photo-frame.png');
+    float: right;
+    background-position: top center;
+    min-height: 350px;
+    max-width: 350px;
+    padding: 10px;
+
+}
+
+
 @media (min-width: 1150px) {
     .container {
         background-size: contain;

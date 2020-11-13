@@ -65,7 +65,7 @@ let groupOfQuestions = [{
                 values: 'romance romance drama'
             },
             {
-                answer: 'Vin Disel',
+                answer: 'Vin Diesel',
                 values: 'action action'
             }
         ]
