@@ -35,7 +35,7 @@ let foodSearches = {
     },
     greek: {
         chicken: ['garlic lemon chicken with roasted potatoes', 'avgolemono soup', 'chicken with okra', 'chicken souvlaki'],
-        beef: ['moussaka', 'pasticio', 'lamb chops', 'gyro', 'biftekia'],
+        beef: ['moussaka', 'pasticio', 'lamb chops', 'gyro', 'greek burgers'],
         pork: ['pork souvlaki', 'greek pork chops', 'pork pitas', 'marinated greek pork tenderloin', 'greek pork loin', 'hummus pork chops'],
         seafood: ['broiled red snapper', 'scallops with rice', 'fried fish marinata', 'grilled octopus', 'stuffed squid'],
         vegaterian: ['spanikopita', 'tyropita', 'fassolia', 'greek salad', 'dolmades', 'spanikopita, tyropita, fassolia, greek salad, dolmades']
@@ -58,11 +58,11 @@ let groupOfQuestions = [{
             },
             {
                 answer: 'Tom Hanks',
-                values: 'drama romance adventure family'
+                values: 'drama adventure family'
             },
             {
                 answer: 'Kate Hudson',
-                values: 'romance romance comedy'
+                values: 'romance romance drama'
             },
             {
                 answer: 'Vin Disel',
@@ -83,11 +83,11 @@ let groupOfQuestions = [{
             },
             {
                 answer: 'someone who faces challenges but rises above',
-                values: 'comedy comedy adventure'
+                values: 'comedy adventure'
             },
             {
                 answer: 'I dont care for heros',
-                values: 'horror horror thriller thriller'
+                values: 'horror horror thriller'
             }
         ]
     },
@@ -96,19 +96,19 @@ let groupOfQuestions = [{
         question: 'What is your preferred movie night like?',
         answers: [{
                 answer: 'something intellectual',
-                values: 'documentary documentary documentary'
+                values: 'documentary documentary'
             },
             {
                 answer: 'hiding under the covers with all the lights on',
-                values: 'horror horror horror thriller thriller',
+                values: 'horror horror thriller',
             },
             {
                 answer: 'having a good laugh with freinds',
-                values: 'comedy comedy comedy'
+                values: 'comedy comedy'
             },
             {
                 answer: 'snuggle on the couch with someone special',
-                values: 'romance romance romance'
+                values: 'romance romance'
             }
         ]
     },
@@ -117,15 +117,15 @@ let groupOfQuestions = [{
         question: 'Whats your favorite part about a movie?',
         answers: [{
                 answer: 'the emotional close ups',
-                values: 'romance romance drama drama documentary'
+                values: 'romance drama documentary'
             },
             {
                 answer: 'the special FX',
-                values: 'action horror adventure scifi'
+                values: 'action adventure scifi'
             },
             {
                 answer: 'unique camera angles',
-                values: 'drama action documentary horror scifi'
+                values: 'action horror thriller drama'
             },
             {
                 answer: 'the panormaic views',
@@ -138,19 +138,19 @@ let groupOfQuestions = [{
         question: 'What movie character do you wish you could be?',
         answers: [{
                 answer: 'James Bond',
-                values: 'action action adventure'
+                values: 'action adventure adventure'
             },
             {
                 answer: 'Michael Meyers',
-                values: 'horror horror horror thriller thriller'
+                values: 'horror horror thriller thriller'
             },
             {
                 answer: 'Luke Skywalker',
-                values: 'scifi scifi scifi action'
+                values: 'scifi scifi action'
             },
             {
                 answer: 'Olaf',
-                values: 'family family family'
+                values: 'family family family comedy'
             }
         ]
     },
@@ -159,19 +159,19 @@ let groupOfQuestions = [{
         question: 'What kind of movie would you most likely find yourself in?',
         answers: [{
                 answer: 'March of the Penguins',
-                values: 'documentary documentary documentary adventure'
+                values: 'documentary documentary adventure'
             },
             {
                 answer: 'The Post',
-                values: 'drama drama thriller'
+                values: 'drama thriller'
             },
             {
-                answer: "Ferris Bueller's Day Off",
-                values: 'comedy comedy family'
+                answer: "Jumangi",
+                values: 'adventure comedy'
             },
             {
                 answer: 'Contagion',
-                values: 'thriller thriller thriller horror horror'
+                values: 'thriller horror horror'
             }
         ]
     },
@@ -179,20 +179,20 @@ let groupOfQuestions = [{
         type: 'movie',
         question: 'Who would you choose as your best friend?',
         answers: [{
-                answer: 'Groot',
-                values: 'action comedy scifi scifi'
+                answer: 'R2D2',
+                values: 'scifi scifi'
             },
             {
-                answer: 'Indiana Jones',
-                values: 'action adventure adventure'
+                answer: 'Jason Borne',
+                values: 'thriller action'
             },
             {
                 answer: 'The Minions',
-                values: 'comedy family family family'
+                values: 'family family comedy'
             },
             {
                 answer: 'Inigo Montoya',
-                values: 'adventure action comedy adventure'
+                values: 'adventure comedy'
             },
         ]
     },
@@ -201,19 +201,19 @@ let groupOfQuestions = [{
         question: 'What do you like to get out of the movies you watch?',
         answers: [{
                 answer: 'entertainment',
-                values: 'action comedy scifi family'
+                values: 'action comedy'
             },
             {
                 answer: 'a lesson',
-                values: 'documentary documentary documentary'
+                values: 'documentary drama scifi'
             },
             {
                 answer: 'inspiration',
-                values: 'drama scifi adventure'
+                values: 'drama scifi'
             },
             {
                 answer: 'love',
-                values: 'romance romance romance drama'
+                values: 'romance romance drama'
             },
         ]
     },
@@ -221,20 +221,20 @@ let groupOfQuestions = [{
         type: 'movie',
         question: 'Who means the most to you?',
         answers: [{
-                answer: 'you family pet',
-                values: 'documentary drama family'
+                answer: 'your family pet',
+                values: 'documentary family'
             },
             {
                 answer: 'your friends',
-                values: 'comedy horror action'
+                values: 'drama drama'
             },
             {
                 answer: 'your partner',
-                values: 'romance romance horror'
+                values: 'romance romance family'
             },
             {
                 answer: 'omg just pick a movie already!',
-                values: 'action action thriller'
+                values: 'action thriller adventure'
             },
         ]
     },
@@ -243,43 +243,22 @@ let groupOfQuestions = [{
         question: 'From this list, which is your favorite movie',
         answers: [{
                 answer: 'The Dark Knight',
-                values: 'action thriller thriller'
+                values: 'action thriller'
             },
             {
-                answer: 'The Hobbit',
-                values: 'adventure adventure adventure'
-            },
-            {
-                answer: 'Frozen',
-                values: 'family family family'
-            },
-            {
-                answer: "You've Got Mail",
-                values: 'romance romance drama drama'
-            }
-        ]
-    }, 
-    {
-        type: 'movie',
-        question: 'Which is your favorite space movie',
-        answers: [{
-                answer: 'The Martian',
-                values: 'drama drama adventure scifi'
+                answer: 'IT',
+                values: 'horror thriller'
             },
             {
                 answer: 'WALL-E',
-                values: 'adventure scifi family family'
+                values: 'family family scifi'
             },
             {
-                answer: 'Prometheus',
-                values: 'horror horror horror scifi'
-            },
-            {
-                answer: "Armageddon",
-                values: 'romance drama thriller thriller scifi'
+                answer: "You've Got Mail",
+                values: 'romance drama'
             }
         ]
-    }, 
+    },
     {
         type: 'cuisine',
         question: 'Your biggest celebrity crush comes and knocks on your door. They have a private jet ready for you two to go have a nice meal anywhere in the world, your choice. Where do you choose?',
@@ -360,7 +339,28 @@ let groupOfQuestions = [{
             },
             {
                 answer: 'Chicken and Waffles',
-                values: 'american'
+                values: 'american american'
+            }
+        ]
+    },
+    {
+        type: 'cuisine',
+        question: 'Which country would like to visit just to try their food?',
+        answers: [{
+                answer: 'Japan',
+                values: 'asian'
+            },
+            {
+                answer: 'Italy',
+                values: 'italian greek'
+            },
+            {
+                answer: 'Indian',
+                values: 'indian'
+            },
+            {
+                answer: 'Mexico',
+                values: 'mexico'
             }
         ]
     },
@@ -429,24 +429,45 @@ let groupOfQuestions = [{
     },
     {
         type: 'protein',
+        question: 'Pick a cartoon!',
+        answers: [{
+                answer: 'Porky Pig',
+                values: 'pork'
+            },
+            {
+                answer: 'Veggie Tales',
+                values: 'vegetarian'
+            },
+            {
+                answer: 'Mr. Crabs',
+                values: 'seafood'
+            },
+            {
+                answer: 'Foghorn Leghorn',
+                values: 'chicken'
+            }
+        ]
+    },
+    {
+        type: 'protein',
         question: 'You are at the Cheese Cake Factory, what are you ordering?',
         answers: [{
-            answer: 'Crispy Pineapple Chicken and Shrimp',
-            values: 'seafood chicken'
-        },
-        {
-            answer: 'Chargrilled New York Steak',
-            values: 'beef'
-        },
-        {
-            answer: 'California Guacamole Salad',
-            values: 'vegetarian'
-        },
-        {
-            answer: "Cuban Sandwhich",
-            values: 'pork'
-        }
-    ]
+                answer: 'Crispy Pineapple Chicken and Shrimp',
+                values: 'seafood chicken'
+            },
+            {
+                answer: 'Chargrilled New York Steak',
+                values: 'beef beef'
+            },
+            {
+                answer: 'California Guacamole Salad',
+                values: 'vegetarian'
+            },
+            {
+                answer: "Cuban Sandwhich",
+                values: 'pork'
+            }
+        ]
     }
 ]
 
@@ -489,17 +510,67 @@ let movieResponses = {
     western: 0
 }
 
+/* ---- BUTTON CLICKS ----- */
 $('#start-btn').click(function () {
-    $('#start-btn').addClass('hidden');
-    $('.text-container').addClass('hidden');
-    $('.post-it-container').removeClass('hidden');
-    $('.restart').removeClass('hidden');
-
+    displayQuestion();
+    $('#start-btn, .text-container').addClass('hidden');
+    $('.post-it-container, .restart, .question-count').removeClass('hidden');
 })
 
-displayQuestion();
+$('.restart').click(function () {
+    window.location.reload();
+})
 
+$('#submit-answer-btn').click(function () {
+    event.preventDefault();
+    let questionType = $('.form-container').attr('data-question-type');
+    if (!($('input:checked').attr('data-values'))) {
+        console.log('no item selected');
+    } else {
+        let answerValues = $('input:checked').attr('data-values').split(' ');
+        console.log(answerValues);
+        for (let i = 0; i < answerValues.length; i++) {
+            if (questionType === 'movie') {
+                movieResponses[answerValues[i]] += 1;
+            } else if (questionType === 'cuisine') {
+                cuisineResponse[answerValues[i]] += 1;
+            } else if (questionType === 'protein') {
+                proteinType[answerValues[i]] += 1;
+            }
+        }
+
+        $('.form-container input:checked').each(function () {
+            $(this).prop('checked', false);
+        });
+
+        if (questionNum <= groupOfQuestions.length - 1) {
+            displayQuestion();
+        } else {
+            console.log('quiz over');
+            selectedGenres = selectLargestValue(movieResponses);
+            selectedGenresNumbers = convertGenreToGenreId(selectedGenres);
+            console.log('Selected Genre: ' + selectedGenres);
+
+            let cuisineResult = selectLargestValue(cuisineResponse);
+            let proteinResult = selectLargestValue(proteinType);
+
+            console.log(cuisineResult);
+            console.log(proteinResult);
+            let arrayLength = foodSearches[cuisineResult][proteinResult].length;
+            let index = getRandomInt(arrayLength);
+            console.log('food index: ' + index);
+            let dishSelected = foodSearches[cuisineResult][proteinResult][index];
+            console.log(dishSelected);
+
+            getRandomMovieByGenres();
+            getRecipe(dishSelected);
+        }
+    }
+})
+
+/* ----- HTML RENDER METHODS ----- */
 function displayQuestion() {
+    updateQuestionCount();
     if (questionNum % 2 === 0 || questionNum === 0) $('.post-it-container').css('background-image', 'url("assets/pink-post-it.png")');
     else $('.post-it-container').css('background-image', 'url("assets/blue-post-it.png")');
 
@@ -516,86 +587,96 @@ function displayQuestion() {
     questionNum++;
 }
 
-function selectLargestValue(array) {
+function updateQuestionCount() {
+    $('.question-count').text(`${questionNum + 1} of ${groupOfQuestions.length}`);
+}
+
+/* ----- AJAX REQUESTS ----- */
+function getRandomMovieByGenres() {
+    let genre = selectedGenresNumbers;
+    let baseUrl = 'https://api.themoviedb.org/3/discover/movie?api_key='
+    let apiKey = '45dc1254eef7b6f17b3187493b8417fb';
+    let sortBy = 'popularity.desc';
+    let defaultValues = '&language=en-US&include_adult=false&include_video=false'
+    let page = getRandomInt(20) + 1;
+    console.log('movie page: ' + page);
+    console.log(movieResponses);
+
+    let searchURL = `${baseUrl}${apiKey}${defaultValues}&sort_by=${sortBy}&page=${page}&with_genres=${genre}`
+
+    $.ajax({
+        url: searchURL,
+        method: "GET"
+    }).then(function (response) {
+        let data = response.results;
+        console.log(data);
+
+        let random = getRandomInt(20);
+        console.log('movie index: ' + random);
+        let posterPath = response.results[random].poster_path;
+        let moviePosterEl = '';
+
+        if (posterPath) {
+            let posterURL = `https://image.tmdb.org/t/p/w200${posterPath}`;
+            moviePosterEl = $('<img>').attr('src', posterURL);
+        }
+
+        let movieTitleEl = $('<div>').text(data[random].title);
+        let releaseDateEl = $('<div>').text(data[random].release_date);
+        let overviewEl = $('<div>').text(data[random].overview);
+
+        $('.output').append(movieTitleEl)
+        if (posterPath) $('.output').append(moviePosterEl);
+        $('.output').append(releaseDateEl, overviewEl)
+    })
+}
+
+function getRecipe(inputValue) {
+    let baseURL = 'https://api.edamam.com/search';
+    let search = `?q=${inputValue}`;
+    let apiKey = '61483b049f42cf2b573ca9154a944bcc';
+    let apiId = 'cc582b21';
+    console.log(cuisineResponse);
+    console.log(proteinType);
+
+    let searchURL = `${baseURL}${search}&app_id=${apiId}&app_key=${apiKey}`;
+    $.ajax({
+        url: searchURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log('food response');
+        console.log(response);
+        console.log('hits length: ' + response.hits.length);
+
+        let random = getRandomInt(10);
+        console.log('random: ' + random);
+        let recipeIngredients = response.hits[random].recipe.ingredientLines;
+        let recipeTitleEl = $('<h2>').text(response.hits[random].recipe.label);
+        let recipePictureEl = $('<img>').attr('src', response.hits[random].recipe.image);
+        let recipeLinkEl = $('<a>').text(response.hits[random].recipe.url).attr('href', response.hits[random].recipe.url);
+        let recipeListEl = $('<div>').addClass('recipe-ingredients-list');
+
+        for (let i = 0; i < recipeIngredients.length; i++) {
+            let item = $('<div>').text(recipeIngredients[i]);
+            $(recipeListEl).append(item);
+        }
+        $('.output').append(recipeTitleEl, recipePictureEl, recipeLinkEl, recipeListEl);
+    })
+
+}
+
+/* ----- UTILITY FUNCTIONS ----- */
+function selectLargestValue(object) {
     let max = 0;
     let result = '';
-    for (let value in array) {
-        if (array[value] > max) {
-            max = array[value];
+    for (let value in object) {
+        if (object[value] > max) {
+            max = object[value];
             result = value;
         }
     }
     return result;
 }
-
-function selectTwoLargestGenreScores() {
-    let max = 0;
-    // finds first largest key value pair
-    for (let genre in movieResponses) {
-        if (movieResponses[genre] > max) {
-            max = movieResponses[genre];
-            answer1 = genre;
-        }
-    }
-
-    max = 0;
-    for (let genre in movieResponses) {
-        if (movieResponses[genre] > max && genre !== answer1) {
-            max = movieResponses[genre];
-            answer2 = genre;
-        }
-    }
-
-    selectedGenres = [answer1, answer2];
-    selectedGenresNumbers = [convertGenreToGenreId(answer1), convertGenreToGenreId(answer2)];
-    console.log(selectedGenres);
-    console.log(selectedGenresNumbers);
-}
-
-$('.restart').click(function () {
-    window.location.reload();
-})
-
-
-$('#submit-answer-btn').click(function () {
-    event.preventDefault();
-
-    let questionType = $('.form-container').attr('data-question-type');
-    let answerValues = $('input:checked').attr('data-values').split(' ');
-
-    for (let i = 0; i < answerValues.length; i++) {
-        if (questionType === 'movie') {
-            movieResponses[answerValues[i]] += 1;
-        } else if (questionType === 'cuisine') {
-            cuisineResponse[answerValues[i]] += 1;
-        } else if (questionType === 'protein') {
-            proteinType[answerValues[i]] += 1;
-        }
-    }
-
-    $('.form-container input:checked').each(function () {
-        $(this).prop('checked', false);
-    });
-
-    if (questionNum <= groupOfQuestions.length - 1) {
-        displayQuestion();
-    } else {
-        console.log('quiz over');
-        selectTwoLargestGenreScores();
-
-        let cuisineResult = selectLargestValue(cuisineResponse);
-        let proteinResult = selectLargestValue(proteinType);
-
-        console.log(cuisineResult);
-        console.log(proteinResult);
-        let arrayLength = foodSearches[cuisineResult][proteinResult].length;
-        let dishSelected = foodSearches[cuisineResult][proteinResult][getRandomInt(arrayLength)];
-        console.log(dishSelected);
-
-        getRandomMovieByGenres();
-        getRecipe(dishSelected);
-    }
-})
 
 function convertGenreToGenreId(genre) {
     switch (genre) {
@@ -638,88 +719,6 @@ function convertGenreToGenreId(genre) {
         case 'western':
             37;
     }
-}
-
-function getRandomMovieByGenres() {
-    let genres = selectedGenresNumbers[0] + '%2C' + selectedGenresNumbers[1];
-    let baseUrl = 'https://api.themoviedb.org/3/discover/movie?api_key='
-    let apiKey = '45dc1254eef7b6f17b3187493b8417fb';
-    let sortBy = 'popularity.desc';
-    let defaultValues = '&language=en-US&include_adult=false&include_video=false'
-    let page = getRandomInt(25) + 1;
-    console.log('page: ' + page);
-
-    let searchURL = `${baseUrl}${apiKey}${defaultValues}&sort_by=${sortBy}&page=${page}&with_genres=${genres}`
-
-    $.ajax({
-        url: searchURL,
-        method: "GET"
-    }).then(function (response) {
-        let data = response.results;
-        console.log(data);
-
-        let random = getRandomInt(20);
-        let posterPath = response.results[random].poster_path;
-        let moviePosterEl = '';
-
-        if (posterPath) {
-            let posterURL = `https://image.tmdb.org/t/p/w200${posterPath}`;
-            moviePosterEl = $('<img>').attr('src', posterURL);
-        }
-
-        let movieTitleEl = $('<div>').text(data[random].title);
-        let releaseDateEl = $('<div>').text(data[random].release_date);
-        let overviewEl = $('<div>').text(data[random].overview);
-
-        $('.output').append(movieTitleEl)
-        if (posterPath) $('.output').append(moviePosterEl);
-        $('.output').append(releaseDateEl, overviewEl)
-    })
-}
-
-function getRecipe(inputValue) {
-    let baseURL = 'https://api.edamam.com/search';
-    let search = `?q=${inputValue}`;
-    let apiKey = '61483b049f42cf2b573ca9154a944bcc';
-    let apiId = 'cc582b21';
-    let from = 1;
-    let to = from + 10;
-
-    console.log(cuisineResponse);
-    console.log(proteinType);
-
-    console.log(from);
-    console.log(to);
-
-    let searchURL = `${baseURL}${search}&app_id=${apiId}&app_key=${apiKey}`;
-    $.ajax({
-        url: searchURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log('food response');
-        console.log(response);
-
-        let random = getRandomInt(10);
-        console.log('random: ' + random);
-        /* console.log(response.hits[random]);
-        console.log(response.hits[random].recipe.label);
-        console.log(response.hits[random].recipe.image);
-        console.log(response.hits[random].recipe.url);
-        console.log(response.hits[random].recipe.ingredientLines); */
-        let recipeIngredients = response.hits[random].recipe.ingredientLines;
-
-        let recipeTitleEl = $('<h2>').text(response.hits[random].recipe.label);
-        let recipePictureEl = $('<img>').attr('src', response.hits[random].recipe.image);
-        let recipeLinkEl = $('<a>').text(response.hits[random].recipe.url).attr('href', response.hits[random].recipe.url);
-        let recipeListEl = $('<div>').addClass('recipe-ingredients-list');
-
-        for (let i = 0; i < recipeIngredients.length; i++) {
-            let item = $('<div>').text(recipeIngredients[i]);
-            $(recipeListEl).append(item);
-        }
-        $('.output').append(recipeTitleEl, recipePictureEl, recipeLinkEl, recipeListEl);
-    })
-
 }
 
 function getRandomInt(max) {

@@ -29,6 +29,11 @@ h3 {
     background-color: black;
 }
 
+.question-count {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+}
+
 .container {
     text-align: center;
     background-image: url('assets/paper.png');
@@ -53,7 +58,6 @@ h3 {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    
 }
 
 .answer-container {
