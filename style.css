@@ -1,3 +1,4 @@
+/* ----- GENERAL ELEMENTS ----- */
 body {
     background-image: url("assets/splotch-pattern.png");
     padding-top: 50px;
@@ -17,6 +18,7 @@ h4 {
     font-size: 20px; 
 }
 
+/* ----- BUTTONS ----- */
 .red-btn {
     background-color: #ed1a38;
     font-family: 'Bebas Neue', cursive;
@@ -34,51 +36,6 @@ h4 {
     background-color: black;
 }
 
-.question-count {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 18px;
-}
-
-.container {
-    text-align: center;
-    background-image: url('assets/paper.png');
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    min-height: 600px;
-}
-
-.post-it-container {
-    background-image: url('assets/pink-post-it.png');
-    text-align: center;
-    background-position: top center;
-    background-repeat: no-repeat;
-    min-height: 350px;
-    max-width: 350px;
-    padding: 10px 20px;
-    margin: auto;
-}
-
-.answer-wrapper {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.answer-container {
-    text-align: left;
-}
-
-.content-wrapper {
-    padding-top: 65px;
-    max-width: 650px;
-    margin: auto;
-}
-
-.text-container {
-    padding: 15px;
-}
-
 .restart {
     text-align: center;
     margin-top: 25px;
@@ -91,6 +48,8 @@ h4 {
     letter-spacing: 1px;
     display: block;
     margin: 25px auto 15px auto;
+    position: relative;
+    z-index: 3;
 }
 
 .restart:active {
@@ -98,11 +57,71 @@ h4 {
     color: white;
 }
 
+#submit-answer-btn {
+    background-color: #ed1a38;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+    font-size: 18px;
+    padding: 2px 10px 5px 10px;
+}
+
+#submit-answer-btn:active {
+    background-color: white;
+    color: #ed1a38;
+} 
+
+/* ---- PAPER/MAIN CONTENT CONTAINER ----- */
+.container {
+    text-align: center;
+    background-image: url('assets/paper.png');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 600px;
+}
+
+.content-wrapper {
+    padding-top: 65px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.question-count {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 18px;
+}
+
+/* ----- POST-IT CONTAINER/QUIZ QUESTIONS ----- */
+.post-it-container {
+    background-image: url('assets/pink-post-it.png');
+    text-align: center;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 350px;
+    max-width: 350px;
+    padding: 10px 20px;
+    margin: auto;
+}
+
 #question {
     text-align: center;
     font-family: 'Bebas Neue', cursive;
     font-size: 18px;
     margin-bottom: 0;
+}
+
+.answer-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.answer-container {
+    text-align: left;
+}
+
+.text-container {
+    padding: 15px;
 }
 
 label {
@@ -126,129 +145,168 @@ label {
     border: 2px solid black;
 }
 
-#submit-answer-btn {
-    background-color: #ed1a38;
-    font-family: 'Bebas Neue', cursive;
-    letter-spacing: 1px;
-    font-size: 18px;
-    padding: 2px 10px 5px 10px;
-}
-
-#submit-answer-btn:active {
-    background-color: white;
-    color: #ed1a38;
-} 
-
-.output {
-    background-color: white;
-}
-
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
 
+/* ----- RESULT ELEMENTS ----- */
 .relative-div-anchor {
     position: relative;
+    width: 100%;
+    text-align: center;
 }
 
-.row {
+.result-wrapper {
     position: absolute;
-    top: 200px;
+    top: 250px;
     width: 100%;
+    text-align: center;
+}
+
+.dinner-and-movie {
+    font-family: 'Courier Prime', cursive;
+    font-size: 20px;
+    max-width: 100px;
+    position: relative;
+    z-index: 2;
+    margin: auto;
+}
+
+.empty-col {
+    width: 15%;
+    display: inline-block;
 }
 
 .movie-column {
-    background-image: url('assets/marquee.png');
+    background-image: url('./assets/marquee-cropped.png');
     background-repeat: no-repeat;
     background-size: contain;
-    height: 1000px; 
+    display: inline-block;
+    height: 750px; 
+    width: 400px;
     background-position: left top;
-}
-
-.movie-inner-container {
-    color: white;
-    margin-top: 10%;
-    height: 90%;
-    width: 89%;
-    margin-left: 10%;
-    text-align: center;
-    padding: 10px 10%;
-}
-
-.movie-inner-container img {
-    height: auto;
-    width: 60%;
-}
-
-.movie-inner-container p {
     font-family: 'Courier Prime', cursive;
+    color: white;
+    position: relative;
+}
+
+.movie-info-wrapper {
+    position: absolute;
+    padding: 30px 58px; 
+}
+
+.movie-column img {
+    height: auto;
+    width: 45%;
+}
+
+.overview-container {
+    overflow: scroll;
+    max-height: 250px;
 }
 
 .recipe-column {
-    background-image: url('assets/recipes-half.png');
+    background-image: url('assets/recipes-w-photo.png');
     background-repeat: no-repeat;
     background-size: contain;
-    height: 1000px;
-}
-
-.recipe-inner-container {
-    margin-top: 10px;
-    height: 90%;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-}
-
-.recipe-inner-container img {
-    height: auto;
-    width: 60%;
-}
-
-.recipe-inner-container a {
-    color: black;
+    height: 750px;
+    width: 400px;
+    display: inline-block;
     font-family: 'Courier Prime', cursive;
+    position: relative;
 }
 
-/* .movie-column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 20px;
+.recipe-info-wrapper {
+    position: absolute;
+    max-width: 400px;
+    padding-top: 35px;
+    padding-left: 15px;
+    padding-right: 15px; 
 }
 
-#marquee-container {
-    background-image: url('assets/marquee.png');
-    float: left;
-    min-height: 350px;
-    max-width: 450px;
-    padding: 10px;
+.recipe-column img {
+    height: auto;
+    width: 45%;
+    margin-bottom: 30px;
 }
 
-.recipe-column {
-    float: right;
-    width: 50%;
-    padding: 10px;
+.recipe-column a {
+    color: black;
 }
 
-#recipe-container {
-    background-image: url('assets/recipes-half.png');
-    float: right;
-    min-height: 450px;
-    max-width: 550px;
-    padding: 10px;
+.ingredients-title {
+    text-decoration: underline;
 }
 
-#recipe-image-container {
-    background-image: url('assets/photo-frame.png');
-    float: right;
-    background-position: top center;
-    min-height: 350px;
-    max-width: 350px;
-    padding: 10px;
-} */
+.ingredients-container {
+    max-height: 190px;
+    text-align: justify;
+    padding: 10px 20px;
+    overflow: scroll;
+}
 
+/* ----- MEDIA QUERIES ----- */
+@media (max-width: 950px) {
+    .dinner-and-movie {
+        max-width: 100%;
+    }
+
+    .empty-col {
+        width: 0px;
+    }
+
+    .result-wrapper {
+        top: 360px;
+    }
+}
+
+@media (max-width: 400px) {
+    .movie-column {
+        width: 340px;
+        height: 700px;
+    }
+
+    .recipe-column {
+        width: 340px;
+        height: 700px;
+    }
+
+    .recipe-info-wrapper {
+        width: 340px;
+        padding-top: 30px;
+    }
+
+    .ingredients-container {
+        max-height: 140px;
+    }
+
+    .overview-container {
+        max-height: 225px;
+    }
+}
+
+@media (max-width: 340px) {
+    .movie-column {
+        width: 320px;
+        height: 680px;
+    }
+
+    .recipe-column {
+        width: 320px;
+        height: 680px;
+    }
+
+    .recipe-info-wrapper {
+        width: 320px;
+    }
+
+    .ingredients-container {
+        max-height: 120px;
+    }
+
+}
 
 @media (min-width: 1150px) {
     .container {
@@ -276,6 +334,7 @@ label {
     }
 }
 
+/* ----- GENERAL CLASS STYLES ----- */
 .hidden {
     display: none;
 }

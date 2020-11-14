@@ -6,23 +6,23 @@ let selectedGenresNumbers = '';
 let foodSearches = {
     italian: {
         chicken: ['chicken parmigiana', 'chicken cacciatore', 'chicken milanese', 'chicken piccata', 'caprese chicken', 'tuscan chicken'],
-        beef: ['spagetti and meatballs', 'beef braciole', 'italian meatball soup', "manzo all'olio"],
-        pork: ['tonno del chianti', 'pampanella', 'pasta bolognese', 'arista al Latte', 'cassoeula', 'carbonara'],
-        seafood: ['italian seafood pasta', 'frutti di mare', 'cioppino', 'pasta with clams', 'linguine and clams', 'tuna taretare'],
-        vegetarian: ['margarita pizza', 'stuffed tomatoes', 'cheese ravioli', 'broccoli gnocchi', 'pasta primavera', 'calamari ripieni', 'mushroom baked ziti'],
+        beef: ['spaghetti and meatballs', 'beef braciole', 'italian meatball soup', "grilled tuscan steak"],
+        pork: ['tonno del chianti', 'pampanella', 'pasta bolognese', 'arista al latte', 'cassoeula', 'carbonara'],
+        seafood: ['italian seafood pasta', 'frutti di mare', 'cioppino', 'pasta with clams', 'linguine and clams', 'tuna tartare'],
+        vegetarian: ['margherita pizza', 'stuffed tomatoes', 'cheese ravioli', 'broccoli gnocchi', 'pasta primavera', 'calamari ripieni', 'mushroom baked ziti'],
     },
     asian: {
         chicken: ['orange chicken', 'kung pao chicken', 'sesame chicken', "general tso's chicken", 'orange chicken', 'ginger chicken'],
         beef: ['broccoli beef', 'chinese pepper steak', 'hunan beef', 'mongolian beef', 'korean bbq', 'korean sizzling beef'],
         pork: ['ginger pork', 'sweet and sour pork', 'chinese bbq pork', 'pork stir fry', 'pork red rice'],
         seafood: ['seafood fried rice', 'szechwan shrimp', 'shrimp lo mein', 'kung pao shrimp', 'ginger soy fish'],
-        vegetarain: ['sushi', 'vegetarian ramen', 'veggie stir fry', 'tofu and snap pee stir fry', 'veggie pad see ew',
+        vegetarian: ['sushi', 'vegetarian ramen', 'veggie stir fry', 'tofu and snap pea stir fry', 'veggie pad see ew',
             'spring rolls', 'spicy szechwan noodles', 'vegetarian hot and sour soup', 'carrot dumplings', 'thai broccoli soup'
         ]
     },
     american: {
-        chicken: ['fried Chicken', 'buffalo wings', 'chicken pot pie', 'chicken spaghetti', 'grilled pineapple chicken', 'baked chicken with veggies'],
-        beef: ['hamburger', 'chicken fried steak', 'pot roast', 'Hamburger, steak, chili', 'chicken fried steak', "smothered steak with mushroom gravy"],
+        chicken: ['fried chicken', 'buffalo wings', 'chicken pot pie', 'chicken spaghetti', 'grilled pineapple chicken', 'baked chicken with veggies'],
+        beef: ['hamburger', 'chicken fried steak', 'pot roast', 'Hamburger, steak, chili', 'chicken fried steak', "smothered steak"],
         pork: ['pork chops', 'pork steak', 'kalua pig', 'pork and beans', 'pulled pork', 'pulled pork sandwich', 'smothered pork chops'],
         seafood: ['clam chowder', 'crab cake', 'fish and chips', 'etouffee', 'cajun pasta', 'poboy', 'oysters rockefeller', 'lobster tail'],
         vegetarian: ['butternut lasagna', 'celery soup', 'roasted sweet potatoes', 'cornbread casserole', 'creamy mushroom soup', 'creamy tomato soup', 'french onion soup', 'creamy artichoke soup', 'roasted butternut squash']
@@ -36,13 +36,13 @@ let foodSearches = {
     },
     greek: {
         chicken: ['garlic lemon chicken with roasted potatoes', 'avgolemono soup', 'chicken with okra', 'chicken souvlaki'],
-        beef: ['moussaka', 'pasticio', 'lamb chops', 'gyro', 'greek burgers'],
+        beef: ['moussaka', 'pastitsio', 'lamb chops', 'gyro', 'greek burgers'],
         pork: ['pork souvlaki', 'greek pork chops', 'pork pitas', 'marinated greek pork tenderloin', 'greek pork loin', 'hummus pork chops'],
         seafood: ['broiled red snapper', 'scallops with rice', 'fried fish marinata', 'grilled octopus', 'stuffed squid'],
-        vegaterian: ['spanikopita', 'tyropita', 'fassolia', 'greek salad', 'dolmades', 'spanikopita, tyropita, fassolia, greek salad, dolmades']
+        vegaterian: ['spanikopita', 'tyropita', 'fasolia', 'greek salad', 'dolmades']
     },
     indian: {
-        chicken: ['chicken tikka masala', 'murg makhani', 'instant pot butter chicken', 'tandori chicken', 'chicken vindaloo curry', 'baked tandoori chicken', 'chicken chettinad', 'kadai chicken'],
+        chicken: ['chicken tikka masala', 'murg makhani', 'butter chicken', 'tandori chicken', 'chicken vindaloo curry', 'baked tandoori chicken', 'chicken chettinad', 'kadai chicken'],
         beef: ['beef masala curry', 'beef curry with potatoes', 'nihari ghost', 'kheema', 'beef curry with rice', 'nadan beef curry'],
         pork: ['spicy pork vindaloo', 'pork curry', 'indian pork chop', 'pork indad'],
         seafood: ['goan fish curry', 'kerala fish', 'tandoori fish tikka', 'seafood vindaloo', 'prawn patia'],
@@ -58,7 +58,7 @@ let groupOfQuestions = [{
                 values: 'comedy comedy'
             },
             {
-                answer: 'Tom Hanks',
+                answer: 'Will Smith',
                 values: 'drama adventure family'
             },
             {
@@ -66,7 +66,7 @@ let groupOfQuestions = [{
                 values: 'romance romance drama'
             },
             {
-                answer: 'Vin Diesel',
+                answer: 'Denzel Washington',
                 values: 'action action'
             }
         ]
@@ -129,7 +129,7 @@ let groupOfQuestions = [{
                 values: 'action horror thriller drama'
             },
             {
-                answer: 'the panormaic views',
+                answer: 'the panoramic views',
                 values: 'documentary adventure scifi'
             }
         ]
@@ -142,11 +142,11 @@ let groupOfQuestions = [{
                 values: 'action adventure adventure'
             },
             {
-                answer: 'Michael Meyers',
+                answer: 'Michael Myers',
                 values: 'horror horror thriller thriller'
             },
             {
-                answer: 'Luke Skywalker',
+                answer: 'Diego Luna',
                 values: 'scifi scifi action'
             },
             {
@@ -163,11 +163,11 @@ let groupOfQuestions = [{
                 values: 'documentary documentary adventure'
             },
             {
-                answer: 'The Post',
+                answer: 'Pelican Brief',
                 values: 'drama thriller'
             },
             {
-                answer: "Jumangi",
+                answer: "Jumanji",
                 values: 'adventure comedy'
             },
             {
@@ -184,7 +184,7 @@ let groupOfQuestions = [{
                 values: 'scifi scifi'
             },
             {
-                answer: 'Jason Borne',
+                answer: 'Samuel L. Jackson',
                 values: 'thriller action'
             },
             {
@@ -325,7 +325,7 @@ let groupOfQuestions = [{
     },
     {
         type: 'cuisine',
-        question: 'You are attempting to make an special dish to impress your significant other.  What would you try to make',
+        question: 'You are attempting to make a special dish to impress your significant other.  What would you try to make:',
         answers: [{
                 answer: 'Sushi',
                 values: 'asian asian'
@@ -529,7 +529,6 @@ $('#submit-answer-btn').click(function () {
         console.log('no item selected');
     } else {
         let answerValues = $('input:checked').attr('data-values').split(' ');
-        console.log(answerValues);
 
         for (let i = 0; i < answerValues.length; i++) {
             if (questionType === 'movie') {
@@ -548,23 +547,17 @@ $('#submit-answer-btn').click(function () {
         if (questionNum <= groupOfQuestions.length - 1) {
             displayQuestion();
         } else {
-            console.log('quiz over');
             $('.post-it-container').addClass('hidden');
+            $('.question-count').hide();
             makeResultScreen();
             selectedGenres = selectLargestValue(movieResponses);
             selectedGenresNumbers = convertGenreToGenreId(selectedGenres);
-            console.log('Selected Genre: ' + selectedGenres);
 
             let cuisineResult = selectLargestValue(cuisineResponse);
             let proteinResult = selectLargestValue(proteinType);
-
-            console.log(cuisineResult);
-            console.log(proteinResult);
-            let arrayLength = foodSearches[cuisineResult][proteinResult].length;
+            let arrayLength = (foodSearches[cuisineResult][proteinResult].length) -1;
             let index = getRandomInt(arrayLength);
-            console.log('food index: ' + index);
             let dishSelected = foodSearches[cuisineResult][proteinResult][index];
-            console.log(dishSelected);
 
             getRandomMovieByGenres();
             getRecipe(dishSelected);
@@ -596,22 +589,17 @@ function updateQuestionCount() {
 }
 
 function makeResultScreen () {
-    let anchorDiv = $('<div>').addClass('relative-div-anchor');
-    let row = $('<div>').addClass('row');
-    let firstCol = $('<div>').addClass('col l1 m0 s12');
-    let movieCol = $('<div>').addClass('col l4 m5 s12 movie-column');
-    let movieInner = $('<div>').addClass('movie-inner-container');
-    let middleCol = $('<div>').addClass('col l2 m2 s12 empty-col');
-    let recipeCol = $('<div>').addClass('col l4 m5 s12 recipe-column');
-    let recipeInner = $('<div>').addClass('recipe-inner-container');
-    let lastCol = $('<div>').addClass('col l1 m0 s12');
-
-    anchorDiv.append(row);
-    movieCol.append(movieInner);
-    recipeCol.append(recipeInner);
-    row.append(firstCol, movieCol, middleCol, recipeCol, lastCol);
-    
-    $('body').prepend(anchorDiv);
+    let resultWrapper = $('<div>').addClass('result-wrapper');
+    let movieColumn = $('<div>').addClass('movie-column');
+    let movieInfoWrap = $('<div>').addClass('movie-info-wrapper');
+    $(movieColumn).append(movieInfoWrap);
+    let emptyCol = $('<div>').addClass('empty-col');
+    let recipeColumn = $('<div>').addClass('recipe-column');
+    let recipeInfoWrap = $('<div>').addClass('recipe-info-wrapper');
+    $(recipeColumn).append(recipeInfoWrap);
+    $('.dinner-and-movie').removeClass('hidden');
+    resultWrapper.append(movieColumn, emptyCol, recipeColumn);
+    $('body').prepend(resultWrapper);
 }
 
 /* ----- AJAX REQUESTS ----- */
@@ -622,9 +610,6 @@ function getRandomMovieByGenres() {
     let sortBy = 'popularity.desc';
     let defaultValues = '&language=en-US&include_adult=false&include_video=false'
     let page = getRandomInt(20) + 1;
-    console.log('movie page: ' + page);
-    console.log(movieResponses);
-
     let searchURL = `${baseUrl}${apiKey}${defaultValues}&sort_by=${sortBy}&page=${page}&with_genres=${genre}`
 
     $.ajax({
@@ -632,11 +617,8 @@ function getRandomMovieByGenres() {
         method: "GET"
     }).then(function (response) {
         let data = response.results;
-        console.log(data);
-
         let random = getRandomInt(20);
-        console.log('movie index: ' + random);
-        let posterPath = response.results[random].poster_path;
+        let posterPath = data[random].poster_path;
         let moviePosterEl = '';
 
         if (posterPath) {
@@ -645,76 +627,47 @@ function getRandomMovieByGenres() {
         }
 
         let movieTitleEl = $('<h4>').text(data[random].title);
-        let releaseDateEl = $('<p>').text('release date: ' + formateDate(data[random].release_date));
+        let releaseDateEl = $('<p>').text('Release Date: ' + formateDate(data[random].release_date));
         let overviewEl = $('<p>').text(data[random].overview);
+        let overviewContainer = $('<div>').addClass('overview-container');
 
-        $('.movie-inner-container').append(movieTitleEl)
-        if (posterPath) $('.movie-inner-container').append(moviePosterEl);
-        $('.movie-inner-container').append(releaseDateEl, overviewEl)
+        $(overviewContainer).append(overviewEl);
+        $('.movie-info-wrapper').append(movieTitleEl)
+        if (posterPath) $('.movie-info-wrapper').append(moviePosterEl);
+        $('.movie-info-wrapper').append(releaseDateEl, overviewContainer)
     })
 }
-
-/* 
-<div class="relative-div-anchor">
-        <div class="row">
-            <div class="col l1 m0 s12"></div>
-            <div class="col l4 m5 s12 movie-column">
-                <div class="movie-inner-container">
-                    <h4>Movie Title</h4>
-                    <img src="./assets/photo-frame.png" alt="">
-                    <p>Released: 12/25/2020 </p>
-                    <p>Overview: </p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime saepe suscipit nihil ratione fugit quia sed culpa eos cupiditate neque, vitae, laboriosam, maiores dicta itaque iure est alias libero repudiandae.</p>
-                </div>
-            </div>
-            <div class="col l2 m2 s12 empty-col"></div>
-            <div class="col l4 m5 s12 recipe-column">
-                <div class="recipe-inner-container">
-                    <h4>Recipe Title</h4>
-                    <img src="./assets/photo-frame.png" alt="">
-                    <p>This will be a link</p>
-                </div>
-            </div>
-            <div class="col l1 m0 s12"></div>
-        </div>
-    </div>
-
-*/
 
 function getRecipe(inputValue) {
     let baseURL = 'https://api.edamam.com/search';
     let search = `?q=${inputValue}`;
     let apiKey = '61483b049f42cf2b573ca9154a944bcc';
     let apiId = 'cc582b21';
-    console.log(cuisineResponse);
-    console.log(proteinType);
-
     let searchURL = `${baseURL}${search}&app_id=${apiId}&app_key=${apiKey}`;
+    console.log('food search: ' + inputValue);
+
+    //https://api.edamam.com/search?q=pastitsio&app_id=cc582b21&app_key=61483b049f42cf2b573ca9154a944bcc
+
     $.ajax({
         url: searchURL,
         method: "GET"
     }).then(function (response) {
-        console.log('food response');
-        console.log(response);
-        console.log('hits length: ' + response.hits.length);
-
-        let random = getRandomInt(10);
-        console.log('random: ' + random);
-        //let recipeIngredients = response.hits[random].recipe.ingredientLines;
+        let random = getRandomInt(5);
         let recipeTitleEl = $('<h4>').text(response.hits[random].recipe.label);
         let recipePictureEl = $('<img>').attr('src', response.hits[random].recipe.image);
-        let recipeLinkTitle =$('<h4>').text('Recipe Link:');
-        let recipeLinkEl = $('<a>').text(response.hits[random].recipe.url).attr('href', response.hits[random].recipe.url);
-        $(recipeTitleEl).attr('target', '_blank');
-        //let recipeListEl = $('<div>').addClass('recipe-ingredients-list');
+        let recipeLinkTitle = $('<h4>');
+        let recipeLinkEl = ($('<a>').text('Recipe Link: click here').attr('href', response.hits[random].recipe.url));
+        $(recipeLinkTitle).html($(recipeLinkEl).attr('target', '_blank'));
+        let recipeIngredientsList = response.hits[random].recipe.ingredientLines;
+        let ingredientTitleEl = $('<h4>').text('Ingredients').addClass('ingredients-title');
+        let ingredientsContainerEl = $('<div>').addClass('ingredients-container');
+        for (let i = 0; i < recipeIngredientsList.length; i++) {
+            let ingredientItemEl = $('<div>').text(recipeIngredientsList[i]).addClass('ingredient-itme');
+            ingredientsContainerEl.append(ingredientItemEl);
+        }
 
-        /*for (let i = 0; i < recipeIngredients.length; i++) {
-            let item = $('<div>').text(recipeIngredients[i]);
-            $(recipeListEl).append(item);
-        } */
-        $('.recipe-inner-container').append(recipeTitleEl, recipePictureEl, recipeLinkTitle, recipeLinkEl,);
+        $('.recipe-info-wrapper').append(recipePictureEl, recipeTitleEl, recipeLinkTitle, ingredientTitleEl, ingredientsContainerEl);
     })
-
 }
 
 /* ----- UTILITY FUNCTIONS ----- */
