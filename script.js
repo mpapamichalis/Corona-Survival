@@ -627,7 +627,7 @@ function getRandomMovieByGenres() {
         }
 
         let movieTitleEl = $('<h4>').text(data[random].title);
-        let releaseDateEl = $('<p>').text('release date: ' + formateDate(data[random].release_date));
+        let releaseDateEl = $('<p>').text('Release Date: ' + formateDate(data[random].release_date));
         let overviewEl = $('<p>').text(data[random].overview);
         let overviewContainer = $('<div>').addClass('overview-container');
 
