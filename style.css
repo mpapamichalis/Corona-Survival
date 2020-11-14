@@ -194,7 +194,7 @@ label {
 
 .movie-info-wrapper {
     position: absolute;
-    padding: 30px 45px; 
+    padding: 30px 58px; 
 }
 
 .movie-column img {
@@ -279,7 +279,7 @@ label {
     }
 
     .ingredients-container {
-        max-height: 105px;
+        max-height: 140px;
     }
 
     .overview-container {
@@ -303,7 +303,7 @@ label {
     }
 
     .ingredients-container {
-        max-height: 80px;
+        max-height: 120px;
     }
 
 }

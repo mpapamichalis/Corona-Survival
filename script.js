@@ -6,23 +6,23 @@ let selectedGenresNumbers = '';
 let foodSearches = {
     italian: {
         chicken: ['chicken parmigiana', 'chicken cacciatore', 'chicken milanese', 'chicken piccata', 'caprese chicken', 'tuscan chicken'],
-        beef: ['spagetti and meatballs', 'beef braciole', 'italian meatball soup', "grilled tuscan steak"],
-        pork: ['tonno del chianti', 'pampanella', 'pasta bolognese', 'arista al Latte', 'cassoeula', 'carbonara'],
-        seafood: ['italian seafood pasta', 'frutti di mare', 'cioppino', 'pasta with clams', 'linguine and clams', 'tuna taretare'],
-        vegetarian: ['margarita pizza', 'stuffed tomatoes', 'cheese ravioli', 'broccoli gnocchi', 'pasta primavera', 'calamari ripieni', 'mushroom baked ziti'],
+        beef: ['spaghetti and meatballs', 'beef braciole', 'italian meatball soup', "grilled tuscan steak"],
+        pork: ['tonno del chianti', 'pampanella', 'pasta bolognese', 'arista al latte', 'cassoeula', 'carbonara'],
+        seafood: ['italian seafood pasta', 'frutti di mare', 'cioppino', 'pasta with clams', 'linguine and clams', 'tuna tartare'],
+        vegetarian: ['margherita pizza', 'stuffed tomatoes', 'cheese ravioli', 'broccoli gnocchi', 'pasta primavera', 'calamari ripieni', 'mushroom baked ziti'],
     },
     asian: {
         chicken: ['orange chicken', 'kung pao chicken', 'sesame chicken', "general tso's chicken", 'orange chicken', 'ginger chicken'],
         beef: ['broccoli beef', 'chinese pepper steak', 'hunan beef', 'mongolian beef', 'korean bbq', 'korean sizzling beef'],
         pork: ['ginger pork', 'sweet and sour pork', 'chinese bbq pork', 'pork stir fry', 'pork red rice'],
         seafood: ['seafood fried rice', 'szechwan shrimp', 'shrimp lo mein', 'kung pao shrimp', 'ginger soy fish'],
-        vegetarain: ['sushi', 'vegetarian ramen', 'veggie stir fry', 'tofu and snap pee stir fry', 'veggie pad see ew',
+        vegetarian: ['sushi', 'vegetarian ramen', 'veggie stir fry', 'tofu and snap pea stir fry', 'veggie pad see ew',
             'spring rolls', 'spicy szechwan noodles', 'vegetarian hot and sour soup', 'carrot dumplings', 'thai broccoli soup'
         ]
     },
     american: {
-        chicken: ['fried Chicken', 'buffalo wings', 'chicken pot pie', 'chicken spaghetti', 'grilled pineapple chicken', 'baked chicken with veggies'],
-        beef: ['hamburger', 'chicken fried steak', 'pot roast', 'Hamburger, steak, chili', 'chicken fried steak', "smothered steak with mushroom gravy"],
+        chicken: ['fried chicken', 'buffalo wings', 'chicken pot pie', 'chicken spaghetti', 'grilled pineapple chicken', 'baked chicken with veggies'],
+        beef: ['hamburger', 'chicken fried steak', 'pot roast', 'Hamburger, steak, chili', 'chicken fried steak', "smothered steak"],
         pork: ['pork chops', 'pork steak', 'kalua pig', 'pork and beans', 'pulled pork', 'pulled pork sandwich', 'smothered pork chops'],
         seafood: ['clam chowder', 'crab cake', 'fish and chips', 'etouffee', 'cajun pasta', 'poboy', 'oysters rockefeller', 'lobster tail'],
         vegetarian: ['butternut lasagna', 'celery soup', 'roasted sweet potatoes', 'cornbread casserole', 'creamy mushroom soup', 'creamy tomato soup', 'french onion soup', 'creamy artichoke soup', 'roasted butternut squash']
@@ -36,13 +36,13 @@ let foodSearches = {
     },
     greek: {
         chicken: ['garlic lemon chicken with roasted potatoes', 'avgolemono soup', 'chicken with okra', 'chicken souvlaki'],
-        beef: ['moussaka', 'pasticio', 'lamb chops', 'gyro', 'greek burgers'],
+        beef: ['moussaka', 'pastitsio', 'lamb chops', 'gyro', 'greek burgers'],
         pork: ['pork souvlaki', 'greek pork chops', 'pork pitas', 'marinated greek pork tenderloin', 'greek pork loin', 'hummus pork chops'],
         seafood: ['broiled red snapper', 'scallops with rice', 'fried fish marinata', 'grilled octopus', 'stuffed squid'],
-        vegaterian: ['spanikopita', 'tyropita', 'fassolia', 'greek salad', 'dolmades', 'spanikopita, tyropita, fassolia, greek salad, dolmades']
+        vegaterian: ['spanikopita', 'tyropita', 'fasolia', 'greek salad', 'dolmades']
     },
     indian: {
-        chicken: ['chicken tikka masala', 'murg makhani', 'instant pot butter chicken', 'tandori chicken', 'chicken vindaloo curry', 'baked tandoori chicken', 'chicken chettinad', 'kadai chicken'],
+        chicken: ['chicken tikka masala', 'murg makhani', 'butter chicken', 'tandori chicken', 'chicken vindaloo curry', 'baked tandoori chicken', 'chicken chettinad', 'kadai chicken'],
         beef: ['beef masala curry', 'beef curry with potatoes', 'nihari ghost', 'kheema', 'beef curry with rice', 'nadan beef curry'],
         pork: ['spicy pork vindaloo', 'pork curry', 'indian pork chop', 'pork indad'],
         seafood: ['goan fish curry', 'kerala fish', 'tandoori fish tikka', 'seafood vindaloo', 'prawn patia'],
@@ -58,7 +58,7 @@ let groupOfQuestions = [{
                 values: 'comedy comedy'
             },
             {
-                answer: 'Tom Hanks',
+                answer: 'Will Smith',
                 values: 'drama adventure family'
             },
             {
@@ -66,7 +66,7 @@ let groupOfQuestions = [{
                 values: 'romance romance drama'
             },
             {
-                answer: 'Vin Diesel',
+                answer: 'Denzel Washington',
                 values: 'action action'
             }
         ]
@@ -129,7 +129,7 @@ let groupOfQuestions = [{
                 values: 'action horror thriller drama'
             },
             {
-                answer: 'the panormaic views',
+                answer: 'the panoramic views',
                 values: 'documentary adventure scifi'
             }
         ]
@@ -142,11 +142,11 @@ let groupOfQuestions = [{
                 values: 'action adventure adventure'
             },
             {
-                answer: 'Michael Meyers',
+                answer: 'Michael Myers',
                 values: 'horror horror thriller thriller'
             },
             {
-                answer: 'Luke Skywalker',
+                answer: 'Diego Luna',
                 values: 'scifi scifi action'
             },
             {
@@ -163,7 +163,7 @@ let groupOfQuestions = [{
                 values: 'documentary documentary adventure'
             },
             {
-                answer: 'The Post',
+                answer: 'Pelican Brief',
                 values: 'drama thriller'
             },
             {
@@ -184,7 +184,7 @@ let groupOfQuestions = [{
                 values: 'scifi scifi'
             },
             {
-                answer: 'Jason Borne',
+                answer: 'Samuel L. Jackson',
                 values: 'thriller action'
             },
             {
@@ -325,7 +325,7 @@ let groupOfQuestions = [{
     },
     {
         type: 'cuisine',
-        question: 'You are attempting to make an special dish to impress your significant other.  What would you try to make',
+        question: 'You are attempting to make a special dish to impress your significant other.  What would you try to make:',
         answers: [{
                 answer: 'Sushi',
                 values: 'asian asian'
@@ -555,7 +555,7 @@ $('#submit-answer-btn').click(function () {
 
             let cuisineResult = selectLargestValue(cuisineResponse);
             let proteinResult = selectLargestValue(proteinType);
-            let arrayLength = foodSearches[cuisineResult][proteinResult].length;
+            let arrayLength = (foodSearches[cuisineResult][proteinResult].length) -1;
             let index = getRandomInt(arrayLength);
             let dishSelected = foodSearches[cuisineResult][proteinResult][index];
 
@@ -646,11 +646,13 @@ function getRecipe(inputValue) {
     let searchURL = `${baseURL}${search}&app_id=${apiId}&app_key=${apiKey}`;
     console.log('food search: ' + inputValue);
 
+    //https://api.edamam.com/search?q=pastitsio&app_id=cc582b21&app_key=61483b049f42cf2b573ca9154a944bcc
+
     $.ajax({
         url: searchURL,
         method: "GET"
     }).then(function (response) {
-        let random = getRandomInt(10);
+        let random = getRandomInt(5);
         let recipeTitleEl = $('<h4>').text(response.hits[random].recipe.label);
         let recipePictureEl = $('<img>').attr('src', response.hits[random].recipe.image);
         let recipeLinkTitle = $('<h4>');
