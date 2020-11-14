@@ -32,7 +32,7 @@ let foodSearches = {
         beef: ['mexican meatball soup', 'milanesa torta', 'barbacoa tacos', 'menudo', 'brisket tacos'],
         pork: ['carnitas torta', 'pozole rojo', 'deshebrada tacos', 'mexican pork chops'],
         seafood: ['shrimp ceviche', 'mexican shrimp cocktail', 'mexican seafood soup'],
-        vegetarian: ['vegan chorizo chiles rellenos', 'cauliflower tacos', 'calabacitas', 'fideo soup', 'lentil soup', 'roasted butternut enchiladas']
+        vegetarian: ['vegan chorizo', 'cauliflower tacos', 'calabacitas', 'fideo soup', 'lentil soup', 'roasted butternut enchiladas']
     },
     greek: {
         chicken: ['garlic lemon chicken with roasted potatoes', 'avgolemono soup', 'chicken with okra', 'chicken souvlaki'],
